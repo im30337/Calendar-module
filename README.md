@@ -1,1 +1,1 @@
-Calendar-module
+banner-module(react)

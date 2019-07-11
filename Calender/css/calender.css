@@ -1,0 +1,66 @@
+.body {
+  font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, Microsoft JhengHei, \\5fae\8edf\96c5\9ed1\9ad4, Microsoft YaHei;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  background-color: #fff;
+}
+
+.tab-month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.left-arrow {
+  height: 50px;
+  width: 20px;
+  background-color: red;
+}
+
+.right-arrow {
+  height: 50px;
+  width: 20px;
+  background-color: red;
+}
+
+.month-list {
+  width: calc(100% - 40px);
+}
+
+.month-list > li {
+  display: inline-block;
+  width: 33.33%;
+  height: 50px;
+  background-color: #ede9dd;
+}
+
+.week {
+  height: 30px;
+}
+
+.week > div {
+  display: inline-block;
+  width: calc(100% / 7);
+  text-align: center;
+  line-height: 30px;
+  color: #666;
+  background-color: #fff;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.days {
+  height: 510px;
+}
+
+.days > div {
+  display: inline-block;
+  width: calc(100% / 7);
+  height: 85px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 3px;
+  background-color: lightgray;
+}
+/*# sourceMappingURL=calender.css.map */
