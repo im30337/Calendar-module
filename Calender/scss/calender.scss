@@ -1,54 +1,256 @@
 .body {
-  font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, Microsoft JhengHei,
-    \\5fae\8edf\96c5\9ed1\9ad4, Microsoft YaHei;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #444;
-  background-color: #fff;
+    font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, Microsoft JhengHei, \\5fae\8edf\96c5\9ed1\9ad4,
+        Microsoft YaHei;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
 }
 .tab-month {
-  display: flex;
+    display: flex;
 }
 .left-arrow {
-  height: 50px;
-  width: 20px;
-  background-color: red;
+    float: left;
+    position: relative;
+    height: 50px;
+    width: 20px;
+    background-color: #ede9dd;
+    cursor: pointer;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        left: -1px;
+        border-width: 7px 7px 7px 0;
+        border-color: transparent #e10500 transparent transparent;
+    }
 }
 .right-arrow {
-  height: 50px;
-  width: 20px;
-  background-color: red;
+    float: right;
+    position: relative;
+    height: 50px;
+    width: 20px;
+    background-color: #ede9dd;
+    cursor: pointer;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 3px;
+        margin: auto;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 0 7px 7px;
+        border-color: transparent transparent transparent #e10500;
+    }
 }
 .month-list {
-  width: calc(100% - 40px);
-  & > li {
+    width: calc(100% - 40px);
+    // & > li {
+    //     display: inline-block;
+    //     width: 33.33%;
+    //     height: 50px;
+    //     background-color: #ede9dd;
+    //     text-align: center;
+    //     line-height: 50px;
+    // }
+}
+.month {
     display: inline-block;
     width: 33.33%;
     height: 50px;
     background-color: #ede9dd;
-  }
-}
-.week {
-  height: 30px;
-  & > div {
-    display: inline-block;
-    width: calc(100% / 7);
     text-align: center;
+    line-height: 50px;
+}
+.current-month {
+    background-color: white;
+    color: #e10500;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f4f4f4;
+}
+.column {
+    width: calc(100% / 7);
+}
+.week-day {
     line-height: 30px;
     color: #666;
+    text-align: center;
     background-color: #fff;
     border-top: 1px solid #f4f4f4;
     border-bottom: 1px solid #f4f4f4;
-  }
 }
-.days {
-  height: 510px;
-  & > div {
-    display: inline-block;
-    width: calc(100% / 7);
+.day {
     height: 85px;
-    box-sizing: border-box;
     padding: 0 3px;
-    background-color: lightgray;
-  }
+    font-size: 12px;
+    line-height: 16px;
+    box-sizing: border-box;
+    border: 1px solid #f4f4f4;
+    cursor: pointer;
+    & > :first-child {
+        text-align: left;
+    }
+    &:hover {
+        background-color: #fff9e3;
+    }
 }
+.day-disable {
+    height: 85px;
+    padding: 0 3px;
+    font-size: 12px;
+    line-height: 16px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+.status {
+    display: block;
+    color: #ff7800;
+    text-align: center;
+}
+.sell {
+    display: block;
+    color: #666;
+    text-align: center;
+}
+.group {
+    display: block;
+    color: #666;
+    text-align: center;
+}
+.price {
+    display: block;
+    color: #e10500;
+    text-align: center;
+}
+.click-hightlight {
+    border: 2px solid #66bb3c;
+    background-color: #fff9e3;
+}
+/*fake*/
+// span {
+//     display: block;
+//   }
+//   .day {
+//     border: solid black 1px;
+//     flex-wrap: wrap;
+//   }
+//   .list {
+//     display: flex;
+//     flex-direction: column;
+//   }
+.card {
+    display: flex;
+    flex-direction: row;
+    border: 1px #f4f4f4 solid;
+    box-sizing: border-box;
+    color: #666;
+    &:hover {
+        background-color: #fff9e3;
+    }
+}
+.card-date {
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 5px;
+    font-weight: bold;
+    flex: 1;
+}
+.card-available {
+    flex: 1;
+    padding: 5px;
+}
+.card-total {
+    padding: 5px;
+    text-align: left;
+    flex: 10;
+}
+.card-right {
+    box-sizing: border-box;
+    padding-right: 15px;
+    text-align: right;
+    flex: 10;
+}
+.card-price {
+    color: #e10500;
+    margin-top: 5px;
+}
+.card-guaranteed {
+    line-height: 1.5;
+    display: inline-block;
+    background: #ff9600;
+    color: #fff;
+    border-radius: 3px;
+}
+.card-padding-bottom {
+    padding-bottom: 5px;
+}
+.status-full {
+    color: #666;
+}
+.status-ready {
+    color: #ff7800;
+}
+.status-alternate {
+    color: #1c9c9d;
+}
+.control-bar {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: row;
+}
+.left-next-page {
+    flex: 1;
+    text-align: left;
+    color: #0077b3;
+    cursor: pointer;
+}
+.right-next-page {
+    flex: 1;
+    text-align: right;
+    color: #0077b3;
+    cursor: pointer;
+}
+.switch-button {
+    background-color: Transparent; 
+    border-style: none;
+    cursor: pointer;
+    color: #0077b3;
+    font-size: 18px;
+}
+// .week {
+//   height: 30px;
+//   & > div {
+//     display: inline-block;
+//     width: calc(100% / 7);
+//     text-align: center;
+//     line-height: 30px;
+//     color: #666;
+//     background-color: #fff;
+//     border-top: 1px solid #f4f4f4;
+//     border-bottom: 1px solid #f4f4f4;
+//   }
+// }
+// .days {
+//   height: 510px;
+//   & > div {
+//     display: inline-block;
+//     width: calc(100% / 7);
+//     height: 85px;
+//     box-sizing: border-box;
+//     padding: 0 3px;
+//     background-color: lightgray;
+//   }
+// }
